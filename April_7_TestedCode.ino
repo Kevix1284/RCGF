@@ -91,7 +91,12 @@ int direction(int position, bool state, int last_motor_position, int EnablePin, 
   }
 }
 
-void pulsemotor(bool direction, bool state, int EnablePin, int DirectionPin, int StepPint)
+void pulsemotor(int direction, bool state, int EnablePin, int DirectionPin, int StepPint)
+if(direction ==-1)
+{
+direction = LOW;
+}
+
 {
 
   digitalWrite(EnablePin, state); //Enables motor for move instructions
