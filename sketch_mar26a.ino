@@ -82,7 +82,7 @@ void setup() {
   pinMode(CH3, INPUT);
   pinMode(CH7, INPUT);
   pinMode(CH6, OUTPUT);
-  pinMode(CH5, OUTPUT);
+  pinMode(CH8, OUTPUT);
   pinMode(CH4, OUTPUT);
   digitalWrite(4, HIGH);
   digitalWrite(6, LOW);
