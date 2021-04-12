@@ -3,7 +3,7 @@
 
 //For Left/Right Control
 #define CH4 4         //Enable Pin,       Blue/Orange       ENABLE
-#define CH5 5         //Direction Pin,    White/Brown       DIRECTION/INPUT [A]
+#define CH8 8         //Direction Pin,    White/Brown       DIRECTION/INPUT [A]
 #define CH6 6         //Step Pin; move,   Black/Yellow      STEP/INPUT      [B]
 #define CH7 7         //Complete,         Green/Red         HLFB - High Level Feed Back
 
@@ -64,7 +64,7 @@ void pulsemotor(bool direction, bool state, int EnablePin, int DirectionPin, int
   digitalWrite(EnablePin, state); //Enables motor for move instructions
   digitalWrite(DirectionPin, direction);  //Sets direction
 
-for(int a = 0;a<5;a++)
+for(int a = 0;a<4;a++)
 {
   digitalWrite(StepPint, HIGH);
   delayMicroseconds(1);
@@ -128,8 +128,8 @@ for(i == 0; i<500; i++)
   //else
   //braking_state = LOW; 
   
-  steering_change = direction(ch3Value, steering_state, last_motor_position, 4, 5, 6, dir);
-  pulsemotor(dir, steering_state, 4, 5, 6);
+  steering_change = direction(ch3Value, steering_state, last_motor_position, 4, 8, 6, dir);
+  pulsemotor(dir, steering_state, 4, 8, 6);
   
   braking_change = direction(ch9Value, braking_state, last_brake_position, 10, 11, 12, dir);
   pulsemotor(dir, braking_state, 10, 11, 12);
